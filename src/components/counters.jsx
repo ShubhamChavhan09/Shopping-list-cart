@@ -19,7 +19,7 @@ export default class Counters extends Component {
     return (
       <div>
         {this.state.counters.map((c) => (
-          <Counter key={c.id} onDelete={this.handleDelete} counter={counter} />
+          <Counter key={c.id} onDelete={this.handleDelete} counters={c} />
         ))}
       </div>
     );
