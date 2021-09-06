@@ -2,24 +2,18 @@ import "../index.css";
 import React, { Component } from "react";
 
 export default class Counter extends Component {
-  state = {
-    value: this.props.counters.value,
-  };
-  handleIncrement = () => {
-    this.setState({
-      value: this.state.value + 1,
-    });
-  };
-
   render() {
     return (
       <div className="container">
         <span className={this.getClasses()}>{this.formatValue()}</span>
-        <button className="btn" onClick={this.handleIncrement}>
+        <button
+          className="btn"
+          onClick={() => this.props.onIncrement(this.props.counter)}
+        >
           Increment
         </button>
         <button
-          onClick={() => this.props.onDelete(this.props.counters.id)}
+          onClick={() => this.props.onDelete(this.props.counter.id)}
           className="btn btn-danger"
         >
           Delete
@@ -29,11 +23,11 @@ export default class Counter extends Component {
   }
   getClasses = () => {
     let classes = "btn btn-";
-    classes += this.state.value === 0 ? "warning" : "blue";
+    classes += this.props.counter.value === 0 ? "warning" : "blue";
     return classes;
   };
   formatValue = () => {
-    const { value } = this.state;
+    const { value } = this.props.counter;
     return value === 0 ? "Zero" : value;
   };
 }
