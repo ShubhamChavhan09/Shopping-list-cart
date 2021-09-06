@@ -4,7 +4,7 @@ import React, { Component } from "react";
 export default class Counter extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="box">
         <span className={this.getClasses()}>{this.formatValue()}</span>
         <button
           className="btn"
