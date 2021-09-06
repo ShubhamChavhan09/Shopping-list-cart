@@ -36,8 +36,28 @@ body {
   align-self: center;
   justify-self: center;
 }
-.container {
+.box {
   display: flex;
   justify-content: space-between;
-  width: 250px;
+  width: 300px;
+}
+.nav {
+  padding: 10px 0;
+}
+.nav a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  padding: 8px;
+  border: 1px solid black;
+}
+.container {
+  padding: 20px;
+}
+.total {
+  background: #00b894;
+  padding: 3px 8px;
+  border-radius: 50%;
+  margin-left: 3px;
 }
